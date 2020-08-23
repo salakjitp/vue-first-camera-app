@@ -24,7 +24,7 @@ export default {
       const picture = document.querySelector("canvas");
       picture.width = (window.innerWidth < 1280) ? window.innerWidth : 1280;
       picture.height = window.innerWidth / ratio;
-
+ 
       const ctx = picture.getContext("2d");
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
