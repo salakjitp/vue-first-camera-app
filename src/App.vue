@@ -46,10 +46,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-/* 
-video {
-	width: 100%;
-	background: rgba(0, 0, 0, 0.2);
-} */
 
 </style>

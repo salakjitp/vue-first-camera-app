@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery gallery-display">
+  <div class="gallery gallery-display py-5">
       <canvas></canvas>
   </div>
 </template>
@@ -12,11 +12,11 @@ export default {
 
 <style lang="scss" scoped>
 .gallery-display{
-    display: block;
-    width: 100vw;
+    // display: block;
+    width: 100%;
     height: 100vh;
 
-    padding: 25px;
+    // padding: 25px;
     box-sizing: border-box;
 
     canvas{

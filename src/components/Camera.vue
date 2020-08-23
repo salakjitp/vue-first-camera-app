@@ -1,7 +1,9 @@
 <template>
   <div class="camera">
       <video autoplay class="camera-display"></video>
-      <button class="btn btn-info snap mt-3" v-on:click="$emit('take-picture')">SNAP</button>
+      <div class="py-3">
+        <button class="btn btn-info" v-on:click="$emit('take-picture')">SNAP</button>
+      </div>
   </div>
 </template>
 
@@ -13,21 +15,21 @@ export default {
             if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
                 let constraints = {
 					video: {
-                        width: { 
+                        width: {
                             min: 640,
                             ideal : 1280,
-                            max: 1920 
+                            max: 1920
                         },
-                        height: { 
+                        height: {
                             min: 720,
                             ideal: 720,
-                            max:1080 
+                            max:1080
                         }
 					},
 				};
 				// const stream = await navigator.mediaDevices.getUserMedia(constraints);
                 // const video = document.querySelector('video');
-                
+
                 navigator.mediaDevices.getUserMedia(constraints).then(stream=>{
                     const videoPlayer = document.querySelector("video");
                     videoPlayer.srcObject = stream;
@@ -48,26 +50,18 @@ export default {
 
 <style lang="scss" scoped>
 .camera {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    padding:  25px;
+    margin-bottom:  25px;
     box-sizing: border-box;
 
     .camera-display{
-        display: block;
+        // display: block;
         width: 100%;
         max-width: 1280px;
         margin: 0 auto;
         background-color: #171717;
         box-shadow: 6px 6px 12px 0px rgba(0,0,0,0.35);
     }
-
-    // .snap{
-    //     display: block;
-    //     margin: 0 auto;
-
-    //     cursor: pointer;
-
-    // }
 }
 </style>
